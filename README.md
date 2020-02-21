@@ -24,4 +24,4 @@ $amex_metabox_fields = $amex_metabox->add_field(array(
 <img src="screenshot.PNG" alt="screenshot" width="70%" />
 
 # License
-The code and the documentation are released under the [MIT License](LICENSE).
+The code and the documentation are released under the [GPLv3 License](LICENSE).
