@@ -8,7 +8,7 @@
  * Version: 1.0.0
  * Author: Automex.website
  * Author URI: http://automex.website
- * License: MIT
+ * License: GPLv3
  * Text Domain: amex-hide-show-password
  * Domain Path: /languages
  */
