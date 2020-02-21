@@ -22,6 +22,11 @@ class AMEX_Hide_Show_Password {
 	public function __construct() {
 		add_filter( 'cmb2_render_hide_show_password', array( $this, 'render_callback_for_hide_show_password' ), 10, 5 );
 		add_filter( 'cmb2_render_hide_show_password_medium', array( $this, 'render_callback_for_hide_show_password_medium' ), 10, 5 );
+		add_action( 'plugins_loaded', array( $this, 'amex_hide_show_password_textdomain' ), 10, 5 );
+	}
+	
+	function amex_hide_show_password_textdomain() {
+		load_plugin_textdomain( 'amex-hide-show-password', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
 	}
 	
 	/* CMB2 Hide/Show Password Field */
@@ -36,7 +41,7 @@ class AMEX_Hide_Show_Password {
 				'autocomplete' => 'off',
 				'desc' => ''
 			) ); ?>
-			<a id="toggle-password" name="toggle-password"><span class="dashicons dashicons-hidden"></span></a>
+			<a id="toggle-password" name="toggle-password" title="<?php _e('Show', 'amex-hide-show-password'); ?>"><span class="dashicons dashicons-hidden"></span></a>
 		</span>
 		<?php echo $field_type_object->_desc( true );
 	}
@@ -53,7 +58,7 @@ class AMEX_Hide_Show_Password {
 				'autocomplete' => 'off',
 				'desc' => ''
 			) ); ?>
-			<a id="toggle-password" name="toggle-password"><span class="dashicons dashicons-hidden"></span></a>
+			<a id="toggle-password" name="toggle-password" title="<?php _e('Show', 'amex-hide-show-password'); ?>"><span class="dashicons dashicons-hidden"></span></a>
 		</span>
 		<?php echo $field_type_object->_desc( true );
 	}
@@ -61,7 +66,13 @@ class AMEX_Hide_Show_Password {
 	public function amex_hide_show_password_css_js( $field ) {	
 		$asset_path = apply_filters( 'amex_hide_show_password_asset_path', plugins_url( '', __FILE__ ) );
 		wp_enqueue_style('amex_hide_show_password_css', $asset_path . '/assets/css/style.min.css', array(), self::VERSION );
-		wp_enqueue_script('amex_hide_show_password_js', $asset_path . '/assets/js/hide-show.min.js', array( 'jquery' ), self::VERSION, true );
+		wp_register_script('amex-hide-show-password', $asset_path . '/assets/js/hide-show.min.js', array( 'jquery' ), self::VERSION, true );
+			$translation_array = array(
+			'show' => __( 'Show', 'amex-hide-show-password' ),
+			'hide' => __( 'Hide', 'amex-hide-show-password' )
+		);
+		wp_localize_script( 'amex-hide-show-password', 'amex_hide_show_password', $translation_array );
+		wp_enqueue_script( 'amex-hide-show-password' );
 	} 
 
 }
