@@ -5,7 +5,7 @@
  * Plugin URI: https://github.com/automex/cmb2-hide-show-password-field
  * GitHub Plugin URI: https://github.com/automex/cmb2-hide-show-password-field
  * Description: Hide/Show Password Field for CMB2
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Automex.website
  * Author URI: http://automex.website
  * License: GPLv3
@@ -16,7 +16,7 @@
 class AMEX_Hide_Show_Password {
 
 
-	const VERSION = '1.0.0';
+	const VERSION = '1.0.1';
 
 
 	public function __construct() {
@@ -31,12 +31,13 @@ class AMEX_Hide_Show_Password {
 	
 	/* CMB2 Hide/Show Password Field */
 	public function render_callback_for_hide_show_password( $field, $escaped_value, $object_id, $object_type, $field_type_object ) { 
-		$this->amex_hide_show_password_css_js( $field ); ?> 
+		$this->amex_hide_show_password_css_js( $field ); 
+		$field_id = $field->args['id']; ?> 
 		<span id="show_hide_password">
 			<?php echo $field_type_object->input( array( 
 				'type' => 'password',
-				'name' => 'hide_show_password',
-				'id'   => 'hide_show_password',
+				'name' => $field_id,
+				'id'   => $field_id,
 				'data-lpignore' => true,
 				'autocomplete' => 'off',
 				'desc' => ''
@@ -48,12 +49,13 @@ class AMEX_Hide_Show_Password {
 	
 	/* CMB2 Hide/Show Password Field Medium */
 	public function render_callback_for_hide_show_password_medium( $field, $escaped_value, $object_id, $object_type, $field_type_object ) { 
-		$this->amex_hide_show_password_css_js( $field ); ?> 
+		$this->amex_hide_show_password_css_js( $field ); 
+		$field_id = $field->args['id']; ?> 
 		<span id="show_hide_password_medium">
 			<?php echo $field_type_object->input( array( 
 				'type' => 'password',
-				'name' => 'hide_show_password_medium',
-				'id'   => 'hide_show_password_medium',
+				'name' => $field_id,
+				'id'   => $field_id,
 				'data-lpignore' => true,
 				'autocomplete' => 'off',
 				'desc' => ''
