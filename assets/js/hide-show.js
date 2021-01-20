@@ -1,5 +1,6 @@
 var $ = jQuery; 
 jQuery(document).ready(function($){
+	console.log(amex_hide_show_password.selector);
 	$("#show_hide_password a, #show_hide_password_medium a").on('click', function(event) {
 		event.preventDefault();
 		if($(this).siblings('input').attr("type") == "text"){
