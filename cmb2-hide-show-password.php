@@ -1,7 +1,7 @@
 <?php defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 /**
- * Plugin Name: Hide/Show Password Field for CMB2
+ * Plugin Name: CMB2 Field Type: Hide/Show Password
  * Plugin URI: https://github.com/automex/cmb2-hide-show-password-field
  * GitHub Plugin URI: https://github.com/automex/cmb2-hide-show-password-field
  * Description: Hide/Show Password Field for CMB2
