@@ -32,8 +32,7 @@ class AMEX_Hide_Show_Password {
 	/* CMB2 Hide/Show Password Field */
 	public function render_callback_for_hide_show_password( $field, $escaped_value, $object_id, $object_type, $field_type_object ) { 
 		$this->amex_hide_show_password_css_js( $field ); ?> 
-		<label style="display: none;" for="<?php echo $field_type_object->_id( '_hide_show_password' ); ?>"><?php echo $field_type_object->_name( '[hide-show-password]' ); ?></label>
-		<span id="show_hide_password">
+		<span id="hide_show_password">
 			<?php echo $field_type_object->input( array( 
 				'type' => 'password',
 				'name'  => $field_type_object->_name( '[hide-show-password]' ),
@@ -41,7 +40,7 @@ class AMEX_Hide_Show_Password {
 				'value' => $escaped_value['hide-show-password'],
 				'data-lpignore' => true,
 				'autocomplete' => 'off',
-				'desc' => ''
+				'desc' => '',
 			) ); ?>
 			<a id="toggle-password" name="toggle-password" title="<?php _e('Show', 'amex-hide-show-password'); ?>"><span class="dashicons dashicons-hidden"></span></a>
 		</span>
@@ -51,8 +50,7 @@ class AMEX_Hide_Show_Password {
 	/* CMB2 Hide/Show Password Field Medium */
 	public function render_callback_for_hide_show_password_medium( $field, $escaped_value, $object_id, $object_type, $field_type_object ) { 
 		$this->amex_hide_show_password_css_js( $field ); ?> 
-		<label style="display: none;" for="<?php echo $field_type_object->_id( '_hide_show_password_medium' ); ?>"><?php echo $field_type_object->_name( '[hide-show-password-medium]' ); ?></label>
-		<span id="show_hide_password_medium">
+		<span id="hide_show_password_medium">
 			<?php echo $field_type_object->input( array( 
 				'type' => 'password',
 				'name'  => $field_type_object->_name( '[hide-show-password-medium]' ),
@@ -60,21 +58,20 @@ class AMEX_Hide_Show_Password {
 				'value' => $escaped_value['hide-show-password-medium'],
 				'data-lpignore' => true,
 				'autocomplete' => 'off',
-				'desc' => ''
+				'desc' => '',
 			) ); ?>
 			<a id="toggle-password" name="toggle-password" title="<?php _e('Show', 'amex-hide-show-password'); ?>"><span class="dashicons dashicons-hidden"></span></a>
 		</span>
 		<?php echo $field_type_object->_desc( true );
 	}
 
-	public function amex_hide_show_password_css_js( $field, $escaped_value, $object_id, $object_type, $field_type_object ) {	
+	public function amex_hide_show_password_css_js( $field ) {	
 		$asset_path = apply_filters( 'amex_hide_show_password_asset_path', plugins_url( '', __FILE__ ) );
 		wp_enqueue_style('amex_hide_show_password_css', $asset_path . '/assets/css/style.min.css', array(), self::VERSION );
 		wp_register_script('amex-hide-show-password', $asset_path . '/assets/js/hide-show.min.js', array( 'jquery' ), self::VERSION, true );
 		$translation_array = array(
 			'show'     => __( 'Show', 'amex-hide-show-password' ),
 			'hide'     => __( 'Hide', 'amex-hide-show-password' ),
-			'selector' => "",
 		);
 		wp_localize_script( 'amex-hide-show-password', 'amex_hide_show_password', $translation_array );
 		wp_enqueue_script( 'amex-hide-show-password' );

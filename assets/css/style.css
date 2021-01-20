@@ -1,11 +1,11 @@
-#show_hide_password, #show_hide_password_medium {
+#hide_show_password, #hide_show_password_medium {
 	position: relative;
 	display: flex;
 }
-#show_hide_password {
+#hide_show_password {
 	width: 25em;
 }
-#show_hide_password_medium {
+#hide_show_password_medium {
 	width: 232px;
 }
 a#toggle-password {
