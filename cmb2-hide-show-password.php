@@ -35,7 +35,7 @@ class AMEX_Hide_Show_Password {
 		<span id="hide_show_password">
 			<?php echo $field_type_object->input( array( 
 				'type' => 'password',
-				'name'  => $field_type_object->_name( '[hide-show-password]' ),
+				'name'  => $field_type_object->_name(),
 				'id'    => $field_type_object->_id(),
 				'value' => $escaped_value['hide-show-password'],
 				'label_cb' => 'yourprefix_function_to_add_label',
@@ -54,7 +54,7 @@ class AMEX_Hide_Show_Password {
 		<span id="hide_show_password_medium">
 			<?php echo $field_type_object->input( array( 
 				'type' => 'password',
-				'name'  => $field_type_object->_name( '[hide-show-password-medium]' ),
+				'name'  => $field_type_object->_name(),
 				'id'    => $field_type_object->_id(),
 				'value' => $escaped_value['hide-show-password-medium'],
 				'data-lpignore' => true,
