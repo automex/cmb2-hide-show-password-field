@@ -1,5 +1,6 @@
 # cmb2-hide-show-password-field
 Adds a Hide/Show Password Field to CMB2.
+
 ## Usage
 ```
 $amex_metabox = new_cmb2_box( array(
