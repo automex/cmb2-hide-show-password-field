@@ -5,7 +5,7 @@
  * Plugin URI: https://github.com/automex/cmb2-hide-show-password-field
  * GitHub Plugin URI: https://github.com/automex/cmb2-hide-show-password-field
  * Description: Hide/Show Password Field for CMB2
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Automex.website
  * Author URI: http://automex.website
  * License: GPLv3
@@ -16,7 +16,7 @@
 class AMEX_Hide_Show_Password {
 
 
-	const VERSION = '1.0.0';
+	const VERSION = '1.1.0';
 
 
 	public function __construct() {
