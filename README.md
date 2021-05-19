@@ -24,5 +24,8 @@ $amex_metabox_fields = $amex_metabox->add_field(array(
 ## Screenshot
 <img src="assets/screenshot-1.PNG" alt="screenshot" width="70%" />
 
+## WordPress.org 
+This plugin is also published on the WordPress Repository and could be found [here](https://wordpress.org/plugins/hideshow-password-field-for-cmb2/)!
+
 # License
 The code and the documentation are released under the [GPLv3 License](LICENSE).
